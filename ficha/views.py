@@ -7,3 +7,16 @@ def home(request):
 
 def iniciarsesion(request):
     return render(request, "iniciar_sesion.html")
+
+
+def registartse(request):
+    return render(request, "registrarse.html")
+
+def main(request):
+    return render(request, "main.html")
+
+def mainFuncionario(request):
+    return render(request, "mainFuncionario.html")
+
+def ficha(request):
+    return render(request, "ficha.html")

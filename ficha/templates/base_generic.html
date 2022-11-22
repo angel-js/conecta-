@@ -10,53 +10,21 @@
   {% load static %}
 </head>
 <body>
-<!-- Navbar   -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)">Conecta +</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Guia de Uso</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">¿Quienes somos?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Registrarse</a>
-          </li>
-        </ul>
-        <div class="d-flex ">
-          <button class="btn btn-success m-2" type="button">Iniciar Sesi&oacute;n</button>
-          <button class="btn btn-primary m-2" type="button">Registrarse</button>
-        </div>
-      </div>
-    </div>
-  </nav>  
-  
- <!-- formulario -->
- {% block content %} {% endblock%}
- {% block carousel %} {% endblock %}
-<!-- Contenido -->
-<div class="container-fluid">
- 
-  <div class="row">
-    <div class="col-sm-2 col-md-4"></div>
-    <div class="col-sm-8 col-md-4 pt-5">
-      {% block form %}{% endblock %}</div>
-    <div class="col-sm-2 col-md-4"></div>
-  </div>
-</div>
 
+  <!-- NavBAR -->
+{% block navbar %}{% endblock %}  
+  
+  <!-- SIDE BAR -->
+  {% block sidebar %}{% endblock %}
+
+<!-- Contenido -->
+{% block form %}{% endblock %}
+{% block carousel %}{% endblock %}
+{% block busq %}{% endblock %}
 
 
 <!-- Footer -->
 <footer class="text-center text-white" style="background-color: #000000;">
-
-
   <!-- Copyright -->
   <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.5);">
     © 2020 Copyright:
