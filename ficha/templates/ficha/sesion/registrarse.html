@@ -1,0 +1,103 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+
+{% block navbar %}  
+<!-- Navbar   -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">Conecta +</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Guia de Uso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">¿Quienes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Registrarse</a>
+          </li>
+        </ul>
+        <div class="d-flex ">
+          <button class="btn btn-success m-2" type="button">Iniciar Sesi&oacute;n</button>
+          <button class="btn btn-primary m-2" type="button">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </nav>  
+  {% endblock %} 
+
+{% block formulario %} 
+<div class="container-fluid">
+ 
+  <div class="row">
+    <div class="col-sm-2 col-md-4"></div>
+    <div class="col-sm-8 col-md-4 pt-5 ">
+      
+
+<h2 class="ins">Registrate!</h2>
+<!-- Incio del formulario -->
+<form class="form" action="{% url 'main' %}" method="post">
+  {% csrf_token %}
+   <!-- Name input -->
+   <div class="form-outline mb-4">
+    <input type="text" id="nameid" name="nombre" class="form-control" autofocus required/>
+    <label class="form-label"   name="nombre" for="nameid">Nombre</label>
+    
+  </div>
+
+   <!-- Last Name input -->
+   <div class="form-outline mb-4">
+    <input type="text" id="apellido"  name="apellido" class="form-control" />
+    <label class="form-label" name="apellido" for="apellido">Apellidos</label>
+  </div>
+
+     <!-- Birth date input -->
+     <div class="form-outline mb-4">
+      <input type="date" id="fecha_nac" name="fecha_nac" class="form-control" />
+      <label class="form-label" name="fecha_nac" for="fecha_nac">Fecha de Nacimiento</label>
+    </div>
+  
+     <!-- Last Name input -->
+   <div class="form-outline mb-4">
+    <input type="text" id="rut" name="rut" class="form-control" />
+    <label class="form-label" name="rut" for="rut">Rut</label>
+  </div>
+
+  <!-- Email input -->
+
+    <div class="form-outline mb-4">
+      <input type="email" id="email" name="correo" class="form-control" />
+      <label class="form-label" name="correo" for="email">Correo Electronico</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" name="passw" id="passw" class="form-control" />
+      <label class="form-label" name="passw" for="passw">Contraseña</label>
+    </div>
+  
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+      <div class="col">
+        <!-- Simple link -->
+        
+      </div>
+    </div>
+
+    <!-- Submit button -->
+      <button type="submit" id="submit" class="btn btn-primary btn-block mb-4">Registrarme</button>
+  
+   
+  </form>
+</div>
+<div class="col-sm-2 col-md-4"></div>
+</div>
+</div>
+  <!-- Fin del formulario -->
+  {% endblock %}

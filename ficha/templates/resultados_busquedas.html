@@ -45,8 +45,27 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8 d-flex justify-content-center">
-                    <h3>Ficha del Paciente</h3>
+                <div class="col-sm-8 ">
+                    <div class="row d-flex justify-content-center">
+                        <h3>Resultados</h3> 
+                    </div>
+                    <p>Est&aacute;s buscando: <strong>{{query}}</strong></p>
+                    {% if paciente %}
+                        <p>Pacientes Encontrados: {{paciente|length}} pacientes</p>
+
+                        <ul>
+                            {% for p in paciente %}
+                            <li>
+                                {{p.nombre}}
+                                {{p.apellido}}<br/>
+                                 edad: {{p.edad}}
+                                 id: {{p.id}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No esta el paciente buscado</p>
+                    {% endif %}
                 </div>
                 <div class="col-sm-2"></div>
             </div>
