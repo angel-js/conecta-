@@ -1,0 +1,68 @@
+ <!-- Name input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="nameid" class="form-control" autofocus required/>
+    <label class="form-label" for="nameid">Nombre</label>
+    
+  </div>
+
+   <!-- Last Name input -->
+   <div class="form-outline mb-4">
+    <input type="text" id="apellido" class="form-control" />
+    <label class="form-label" for="apellido">Apellidos</label>
+  </div>
+
+     <!-- Birth date input -->
+     <div class="form-outline mb-4">
+      <input type="date" id="fecha_nac" class="form-control" />
+      <label class="form-label" for="fecha_nac">Fecha de Nacimiento</label>
+    </div>
+  
+     <!-- Last Name input -->
+   <div class="form-outline mb-4">
+    <input type="text" id="rut" class="form-control" />
+    <label class="form-label" for="rut">Rut</label>
+  </div>
+
+  <!-- Email input -->
+
+    <div class="form-outline mb-4">
+      <input type="email" id="email" class="form-control" />
+      <label class="form-label" for="email">Correo Electronico</label>
+      {{form.username}}
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="pass" class="form-control" />
+      <label class="form-label" for="pass">Contraseña</label>
+      {{form.password}}
+    </div>
+  
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+      <div class="col">
+        <!-- Simple link -->
+        
+      </div>
+    </div>
+
+     <!-- Register buttons -->
+<!--     <div class="text-center">
+      <p> ¿Tienes una cuenta? <a href="#!">Iniciar Sesi&oacute;n</a></p>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button>
+    </div> -->
