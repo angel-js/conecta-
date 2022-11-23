@@ -42,7 +42,7 @@
 
 <h2 class="ins">Inicia Sesi&oacute;n</h2>
 <!-- Incio del formulario -->
-<form>
+<form method="post" action="{% url 'mainFuncionario' %}">
     <!-- Email input -->
     <div class="form-outline mb-4">
       <input type="email" id="form2Example1" class="form-control" />
@@ -72,25 +72,13 @@
     </div>
   
     <!-- Submit button -->
-    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
   
     <!-- Register buttons -->
     <div class="text-center">
       <p>Not a member? <a href="#!">Register</a></p>
       <button type="button" class="btn btn-link btn-floating mx-1">
         <i class="fab fa-facebook-f"></i>
-      </button>
-  
-      <button type="button" class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-google"></i>
-      </button>
-  
-      <button type="button" class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-twitter"></i>
-      </button>
-  
-      <button type="button" class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-github"></i>
       </button>
     </div>
   </form>

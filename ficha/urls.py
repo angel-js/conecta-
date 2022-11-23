@@ -10,6 +10,9 @@ urlpatterns = [
     path('mainFuncionario/', views.mainFuncionario, name='mainFuncionario'),
     path('ficha/', views.ficha, name='ficha'),
     #Vistas API
-    path('fichaID/', views.FichaView.as_view(), name='fichas_list'),
+    #path('fichaID/', views.UsuarioRegistro.as_view(), name='fichas_list'),
+    path('busqueda/', views.busqueda_ficha, name="busqueda_ficha"),
+    path('buscar/', views.buscar, name="buscar"),
+    path('agregar-paciente/', views.agregar_paciente, name="agregar"),
 ]
 

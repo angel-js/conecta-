@@ -1,0 +1,51 @@
+
+     <!-- Register buttons -->
+<!--     <div class="text-center">
+      <p> ¿Tienes una cuenta? <a href="#!">Iniciar Sesi&oacute;n</a></p>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button>
+    </div> -->
+
+
+    /// DJango view
+    class FichaView(View):
+
+    @method_decorator(csrf_exempt)
+    def dispatch(self, request, *args, **kwargs) :
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self,request):
+        fichas = list(Ficha.objects.values())
+        if len(fichas) > 0:
+            datos={'message': "Success", 'fichas': fichas}
+        else:
+            datos= {'message': "Fichas not found...."}
+        return JsonResponse(fichas,  safe=False)
+    
+    def post(self,request):
+        #print(request.body)
+        jd=json.loads(request.body)
+        #print(jd)
+        Ficha.objects.create( id_comentario=jd['id_comentario'])
+        datos = {'message': "Success"}
+        return JsonResponse(datos,  safe=False)
+
+    
+    def put(self,request):
+        pass
+
+    def delete(self,request):
+        pass

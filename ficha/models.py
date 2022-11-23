@@ -160,6 +160,7 @@ class Familiar(models.Model):
 class Ficha(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     id_comentario = models.ForeignKey(Comentario, models.DO_NOTHING, db_column='id_comentario')
+    id_ingreso = models.OneToOneField('Ingreso', models.DO_NOTHING)
 
     class Meta:
         managed = False
@@ -183,7 +184,7 @@ class Ingreso(models.Model):
     fecha_comentario = models.DateField()
     hora_comentario = models.TimeField()
     id_paciente = models.ForeignKey('Paciente', models.DO_NOTHING, db_column='id_paciente')
-    id_patologia = models.ForeignKey('Patologia', models.DO_NOTHING, db_column='id_patologia')
+    
 
     class Meta:
         managed = False
@@ -224,10 +225,10 @@ class Region(models.Model):
 class Rol(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     nombre_rol = models.CharField(max_length=20)
-    lectura = models.TextField()  # This field type is a guess.
-    escritura = models.TextField()  # This field type is a guess.
-    borrar = models.TextField()  # This field type is a guess.
-    crear = models.TextField()  # This field type is a guess.
+    lectura = models.BooleanField() # This field type is a guess.
+    escritura = models.BooleanField()  # This field type is a guess.
+    borrar = models.BooleanField()  # This field type is a guess.
+    crear = models.BooleanField()  # This field type is a guess.
 
     class Meta:
         managed = False
@@ -253,7 +254,7 @@ class Usuario(models.Model):
     sexo = models.CharField(max_length=10)
     email = models.CharField(max_length=80)
     contrasenia = models.CharField(max_length=80)
-    id_rol = models.OneToOneField(Rol, models.DO_NOTHING, db_column='id_rol')
+    id_rol = models.ForeignKey(Rol, on_delete=models.CASCADE, db_column='id_rol', default=3)
 
     class Meta:
         managed = False

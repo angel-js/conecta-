@@ -1,8 +1,13 @@
-{% extends "base_generic.html" %}
+{% extends 'ficha/base_generic.html' %}
 
 {% load static %}
 
+
+
 {% block sidebar %}
+
+{% load crispy_forms_tags %}
+
 <div class="container-fluid">
   <div class="row flex-nowrap">
       <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -14,15 +19,10 @@
                           <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                       </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="{% url 'busqueda_ficha' %}" class="nav-link align-middle px-0">
-                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Buscar un paciente</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'agregar' %}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Registrar Paciente</span> </a>
-                </li>
+                  <li>
+                      <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                          <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Registrar Paciente</span> </a>
+                  </li>
               </ul>
               <hr>
               <div class="dropdown pb-4">
@@ -43,27 +43,36 @@
       </div>
       <div class="col py-3">
           <h2>Funcionario</h2>
-            <form action="{% url 'buscar' %}" method="GET">
-                <input type="text" name="ficha_paciente"/>
-                <button type="submit" value="busqueda_ficha.html" name="">Buscar</button>
-            </form>
+
+          <h3 class="ins">Registrar Paciente</h3>
+          <!-- Incio del formulario -->
+
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+               
+          <div class="card">
+            <div class="card-body">
+          <form class="form" action="" method="post"> 
+            {% csrf_token %}
+             <!-- Name input -->
+              {{ form | crispy}}
+          
+              <div class="d-flex justify-content-center">
+                  <input type="reset" value="Cancelar" class="btn btn-secondary" >
+                  <input type="submit" value="Guardar" class="btn btn-primary" >
+              </div>
+          </form>
+          {{mensaje}}
+        </div>
+    </div>
+         
+</div>
+</div>
+            <!-- Fin del formulario -->
+          
       </div>
   </div>
 </div>
 {% endblock %}
 
 
-{% block busq %}
-
-<div class="container-fluid">
-  <div class="row pt-2">
-    <div class="col-sm-12 col-md-4 pt-5">
-
-    </div>
-    <div class="col-sm-12 col-md-8 pt-5">
-
-    </div>
-
-  </div>
-</div>
-{% endblock %}
