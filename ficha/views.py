@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.views import View
 
 
 # Create your views here.
@@ -13,14 +15,6 @@ def iniciarsesion(request):
     return render(request, "iniciar_sesion.html")
 
 def registarse(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            message.success(request, f'Usuario {username} creado!')
-        else:
-            form = UserCreationForm()
-        context = {'form': form}
     return render(request, "registrarse.html")
 
 
@@ -32,3 +26,22 @@ def mainFuncionario(request):
 
 def ficha(request):
     return render(request, "ficha.html")
+
+class FichaView(View):
+
+    def get(self,request):
+        fichas = list(Ficha.objects.values())
+        if len(fichas)>0:
+            datos={'message': "Success", 'fichas': fichas}
+        else:
+            datos= {'message': "Fichas not found...."}
+        return JsonResponse(fichas)
+    
+    def post(self,request):
+        pass
+    
+    def put(self,request):
+        pass
+
+    def delete(self,request):
+        pass
