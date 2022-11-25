@@ -18,13 +18,11 @@
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">¿Quienes somos?</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Registrarse</a>
-          </li>
         </ul>
         <div class="d-flex ">
-          <button class="btn btn-success m-2" type="button">Iniciar Sesi&oacute;n</button>
-          <button class="btn btn-primary m-2" type="button">Registrarse</button>
+          <a href="{% url 'iniciar_sesion' %}">
+            <button class="btn btn-success m-2" type="submit">Iniciar Sesi&oacute;n</button>
+          </a>
         </div>
       </div>
     </div>

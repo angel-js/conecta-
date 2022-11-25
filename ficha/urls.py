@@ -13,6 +13,6 @@ urlpatterns = [
     #path('fichaID/', views.UsuarioRegistro.as_view(), name='fichas_list'),
     path('busqueda/', views.busqueda_ficha, name="busqueda_ficha"),
     path('buscar/', views.buscar, name="buscar"),
-    path('agregar-paciente/', views.agregar_paciente, name="agregar"),
+    path('agregar_paciente/', views.agregar_paciente, name="agregar"),
 ]
 
