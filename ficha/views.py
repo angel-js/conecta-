@@ -67,4 +67,5 @@ def agregar_paciente(request):
             data["mensaje"] = "guardado correctamente"
         else:
             data["form"] = formulario
+    
     return render(request, 'ficha/paciente/agregar.html', data)

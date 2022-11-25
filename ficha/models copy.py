@@ -116,7 +116,7 @@ class Usuario(models.Model):
         managed = False
         db_table = 'usuario'
 
-class 
+class Person
 
 class Paciente(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
