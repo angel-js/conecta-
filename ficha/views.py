@@ -26,17 +26,17 @@ def registarse(request):
 
 
 def main(request):
-    return render(request, "main.html")
+    return render(request, "ficha/vistaFamiliar/main.html")
 
 def mainFuncionario(request):
-    return render(request, "mainFuncionario.html")
+    return render(request, "ficha/vista/mainFuncionario.html")
 
 def ficha(request):
     return render(request, "ficha.html")
 
 #Busqueda
 def busqueda_ficha(request):
-    return render(request, "mainFuncionario.html") 
+    return render(request, "ficha/vistafuncionario/mainFuncionario.html") 
 
 def buscar(request):
     if request.GET["ficha_paciente"]:
@@ -47,7 +47,7 @@ def buscar(request):
             message="Texto demasiado largo"
         else:
             paciente=Usuario.objects.filter(nombre__icontains=ficha)
-            return render(request, "resultados_busquedas.html",{"paciente": paciente, "query":ficha})
+            return render(request, "ficha/vistafuncionario/resultados_busquedas.html",{"paciente": paciente, "query":ficha})
     else:
         message="No has introducido nada!"
     return HttpResponse(message)
